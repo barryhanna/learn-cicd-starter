@@ -22,5 +22,8 @@ jobs:
             - name: Build
               run: scripts/buildprod.sh
 
+            - name: gcloud login
+              run: gcloud auth login
+
             - name: gcloud builds submit
               run: gcloud builds submit --project notely --tag europe-west2-docker.pkg.dev/continual-voice-426607-k9/notely-ar-repo/notely .
